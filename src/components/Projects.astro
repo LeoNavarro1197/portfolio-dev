@@ -1,11 +1,15 @@
 ---
-import ScreenShotPage from '../assets/projects/screen-shot-page.webp';
+import ScreenShotPagePomodoro from '../assets/projects/pomodoro.webp';
+import ScreenShotPageRick from '../assets/projects/rickandmorty.webp';
+import ScreenShotPageMyWork from '../assets/projects/mywork.webp';
 import Tailwind from './icons/Tailwind.astro';
-import Astro from './icons/_Astro.astro';
 import React from './icons/React.astro';
 import Social from './Social.astro';
 import Github from './icons/Github.astro';
-import Linkedin from './icons/Linkedin.astro';
+import Web from './icons/Web.astro';
+import ArtStation from './icons/ArtStation.astro';
+import Expo from './icons/Expo.astro';
+import Blender from './icons/Blender.astro';
 
 const TAGS = {
     TAILWIND: {
@@ -13,39 +17,52 @@ const TAGS = {
         icon: Tailwind
     },
     REACT: {
-        name: 'React',
+        name: 'React Native',
         icon: React
     },
-    ASTRO: {
-        name: 'Astro',
-        icon: React
+    EXPO: {
+        name: 'Expo',
+        icon: Expo
     },
+    BLENDER: {
+        name: 'Blender',
+        icon: Blender
+    }
 }
 
 const PROJECTS = [
     {
-        title: 'project 1',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam',
-        link: 'https://flowbite.com/docs/components/badge/',
-        github: 'https://github.com/Leito-dev/project-1',
-        image: ScreenShotPage,
-        tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.ASTRO]
+        title: 'Rick And Morty App',
+        description: 'App en React Native y Expo con expo-router, que utiliza NativeWind para estilos y muestra personajes de Rick and Morty mediante su API.',
+        link: 'https://rickandmorty-character-leo.netlify.app',
+        github: 'https://github.com/LeoNavarro1197/character-rickandmorty-react-native',
+        artstation: 'https://www.artstation.com/artwork/x3rYGE',
+        image: ScreenShotPageRick,
+        tags: [TAGS.REACT, TAGS.EXPO,TAGS.TAILWIND]
     },
     {
-        title: 'project 2',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing',
-        link: 'https://flowbite.com/docs/components/badge/',
-        github: 'https://github.com/Leito-dev/project-1',
-        image: ScreenShotPage,
-        tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.ASTRO]
+        title: 'Pomodoro Time App',
+        description: 'App de temporizador Pomodoro desarrollado con React Native, Expo y TypeScript con cambio automático entre modos y efectos de sonido.',
+        link: 'https://pomodoro-time-leo.netlify.app',
+        github: 'https://github.com/LeoNavarro1197/pomodoro-time',
+        artstation: 'https://www.artstation.com/artwork/XJ2b2y',
+        image: ScreenShotPagePomodoro,
+        tags: [TAGS.REACT, TAGS.EXPO, TAGS.TAILWIND]
+    },
+    {
+        title: 'Mi Trabajo En Blender',
+        description: 'En este portfolio muestro algunos de mis trabajos en Blender, mostrando diferentes estilos de renderizado y efectos de iluminación.',
+        artstation: 'https://www.artstation.com/artwork/V20g8R',
+        image: ScreenShotPageMyWork,
+        tags: [TAGS.BLENDER]
     },
 ]
 
 ---
 
 {
-    PROJECTS.map(({title, description, link, github, image, tags}) => (
-        <div class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 pb-15">
+    PROJECTS.map(({title, description, link, artstation, github, image, tags}) => (
+        <div class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 pb-20">
             <div class="w-full md:w-1/2">
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                     <img class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image.src} alt={title} />
@@ -67,17 +84,25 @@ const PROJECTS = [
                     <p class="text-white opacity-80">{description}</p>
                 </div>
                 <div class="flex flex-row gap-x-2 py-3 text-sm">
-                    <Social href={github}>
-                        <Github class="size-4" />
-                        GitHub
+                    { link &&(
+                        <Social href={link}>
+                            <Web class="size-4" />
+                            Web
+                        </Social>
+                    )}
+                    
+                    <Social href={artstation}>
+                        <ArtStation class="size-4" />
+                        ArtStation
                     </Social>
-                    <Social href={link}>
-                        <Linkedin class="size-4" />
-                        LinkedIn
-                    </Social>
+                    {github && (
+                        <Social href={github}>
+                            <Github class="size-4" />
+                            GitHub
+                        </Social>
+                    )}  
                 </div>
             </div>
-            
         </div>
     ))
 }
