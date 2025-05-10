@@ -2,6 +2,9 @@
 import ScreenShotPagePomodoro from '../assets/projects/pomodoro.webp';
 import ScreenShotPageRick from '../assets/projects/rickandmorty.webp';
 import ScreenShotPageMyWork from '../assets/projects/mywork.webp';
+import ScreenShotPageIA from '../assets/projects/ia.webp';
+import ScreenShotPageVR from '../assets/projects/vr.webp';
+import ScreenShotPageMario from '../assets/projects/mario.webp';
 import Tailwind from './icons/Tailwind.astro';
 import React from './icons/React.astro';
 import Social from './Social.astro';
@@ -11,14 +14,23 @@ import ArtStation from './icons/ArtStation.astro';
 import Expo from './icons/Expo.astro';
 import Blender from './icons/Blender.astro';
 import TypeScript from './icons/TypeScript.astro';
+import Unity from './icons/Unity.astro';
+import Python from './icons/Python.astro';
+import Csharp from './icons/Csharp.astro';
+import JavaScript from './icons/JavaScript.astro';
+import Phaser from './icons/Phaser.astro';
 
 const TAGS = {
     TAILWIND: {
         name: 'Tailwind',
         icon: Tailwind
     },
+    REACTN: {
+        name: 'React NT',
+        icon: React
+    },
     REACT: {
-        name: 'React N',
+        name: 'React',
         icon: React
     },
     EXPO: {
@@ -32,6 +44,26 @@ const TAGS = {
     TYPESCRPT: {
         name: 'TypeScript',
         icon: TypeScript
+    },
+    UNITY:{
+        name: 'Unity',
+        icon: Unity
+    },
+    PYTHON:{
+        name: 'Python',
+        icon: Python
+    },
+    CSHARP:{
+        name: 'C#',
+        icon: Csharp
+    },
+    JAVASCRIPT:{
+        name: 'JavaScript',
+        icon: JavaScript
+    },
+    PHASER:{
+        name: 'Phaser',
+        icon: Phaser
     }
 }
 
@@ -43,7 +75,37 @@ const PROJECTS = [
         github: 'https://github.com/LeoNavarro1197/character-rickandmorty-react-native',
         artstation: 'https://www.artstation.com/artwork/x3rYGE',
         image: ScreenShotPageRick,
-        tags: [TAGS.REACT, TAGS.EXPO,TAGS.TAILWIND]
+        tags: [TAGS.REACTN, TAGS.EXPO, TAGS.TAILWIND]
+    },
+    {
+        title: 'IA Generativa',
+        description: 'IA Generativa desarrollada con Python, React y threeJS para la implementación del modelo y animaciones en 3D.',
+        artstation: 'https://www.artstation.com/artwork/8ByBWO',
+        image: ScreenShotPageIA,
+        tags: [TAGS.REACT, TAGS.PYTHON, TAGS.BLENDER]
+    },
+    {
+        title: 'VR Simulator',
+        description: 'Simulador en realidad virtual desarrollado con Unity y C#, utilizando el SDK de Oculus para la interacción con el entorno virtual.',
+        github: 'https://github.com/LeoNavarro1197/VRDrogSena',
+        artstation: 'https://www.artstation.com/artwork/qJRJzy',
+        image: ScreenShotPageVR,
+        tags: [TAGS.UNITY, TAGS.CSHARP, TAGS.BLENDER]
+    },
+    {
+        title: 'Mi Trabajo En Blender',
+        description: 'En este portfolio muestro algunos de mis trabajos en Blender, mostrando diferentes estilos de renderizado y efectos de iluminación.',
+        artstation: 'https://www.artstation.com/artwork/V20g8R',
+        image: ScreenShotPageMyWork,
+        tags: [TAGS.BLENDER]
+    },
+    {
+        title: 'Super Mario Bros JS',
+        description: 'Super Mario Bros desarrollado con Phaser JS, con diferentes escenas y niveles, con efectos de sonido, animaciones y cámara dinámica.',
+        link: 'https://super-mario-bros-game.netlify.app',
+        github: 'https://github.com/LeoNavarro1197/super-mario-bros',
+        image: ScreenShotPageMario,
+        tags: [TAGS.JAVASCRIPT, TAGS.PHASER]
     },
     {
         title: 'Pomodoro Time App',
@@ -52,14 +114,7 @@ const PROJECTS = [
         github: 'https://github.com/LeoNavarro1197/pomodoro-time',
         artstation: 'https://www.artstation.com/artwork/XJ2b2y',
         image: ScreenShotPagePomodoro,
-        tags: [TAGS.REACT, TAGS.EXPO, TAGS.TYPESCRPT]
-    },
-    {
-        title: 'Mi Trabajo En Blender',
-        description: 'En este portfolio muestro algunos de mis trabajos en Blender, mostrando diferentes estilos de renderizado y efectos de iluminación.',
-        artstation: 'https://www.artstation.com/artwork/V20g8R',
-        image: ScreenShotPageMyWork,
-        tags: [TAGS.BLENDER]
+        tags: [TAGS.REACTN, TAGS.EXPO, TAGS.TYPESCRPT]
     },
 ]
 
@@ -95,11 +150,12 @@ const PROJECTS = [
                             Web
                         </Social>
                     )}
-                    
-                    <Social href={artstation}>
-                        <ArtStation class="size-4" />
-                        ArtStation
-                    </Social>
+                    { artstation && (
+                        <Social href={artstation}>
+                            <ArtStation  />
+                            ArtStation
+                        </Social>
+                    )}
                     {github && (
                         <Social href={github}>
                             <Github class="size-4" />
