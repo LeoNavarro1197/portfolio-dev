@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
-import foto from '../assets/image/foto.jpg';
+import foto from '../assets/image/foto2.jpg';
 import Github from '../components/icons/Github.astro';
 import Linkedin from '../components/icons/Linkedin.astro';
 import Social from '../components/Social.astro';
@@ -13,6 +13,7 @@ import Code from '../components/icons/Code.astro';
 import Phone from '../components/icons/Phone.astro';
 import '@fontsource-variable/onest';
 import Contact from '../components/Contact.astro';
+import Download from '../components/icons/Download.astro';
 import Footer from '../components/Footer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -24,7 +25,7 @@ import Footer from '../components/Footer.astro';
 	<main class="p-10">
 		<section class="w-full mx-auto pt-30 lg:w-[800px]">
 			<div class="flex flex-row align-middle">
-				<img src={foto.src} alt="Leito" class="w-15 h-15 mb-4 rounded-full object-cover object-center" />
+				<img src={foto.src} alt="Leito" class="w-25 h-25 mb-4 rounded-full object-cover object-center" />
 				<div class="flex justify-center items-center pl-8 pb-3"><Badge>Developer</Badge></div>
 			</div>
 			<div class="flex flex-row">
@@ -66,6 +67,13 @@ import Footer from '../components/Footer.astro';
 				Contacto
 			</h2>
 			<Contact />
+		</section>
+		<section id="cv" class="w-full mx-auto lg:w-[800px] pb-20 pt-10 text-center">
+			<a href="/CVYeisonLeonardoNavarro.pdf" download class="inline-flex items-center justify-center gap-x-2 px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300">
+				<Download class="w-5 h-5" />
+				Descargar CV
+			</a>
+			<p class="text-white opacity-70 mt-4">Para descargar mi CV, haz clic en el botón de arriba.</p>
 		</section>
 		<Footer />
 	</main>
