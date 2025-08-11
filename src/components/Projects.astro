@@ -5,6 +5,7 @@ import ScreenShotPageMyWork from '../assets/projects/mywork.webp';
 import ScreenShotPageIA from '../assets/projects/ia.webp';
 import ScreenShotPageVR from '../assets/projects/vr.webp';
 import ScreenShotPageMario from '../assets/projects/mario.webp';
+import ScreenShotItch from '../assets/projects/itch.webp';
 import Tailwind from './icons/Tailwind.astro';
 import React from './icons/React.astro';
 import Social from './Social.astro';
@@ -19,6 +20,7 @@ import Python from './icons/Python.astro';
 import Csharp from './icons/Csharp.astro';
 import JavaScript from './icons/JavaScript.astro';
 import Phaser from './icons/Phaser.astro';
+import Itch from './icons/Itch.astro';
 
 const TAGS = {
     TAILWIND: {
@@ -64,10 +66,21 @@ const TAGS = {
     PHASER:{
         name: 'Phaser',
         icon: Phaser
+    },
+    ITCH:{
+        name: 'Itch',
+        icon: Itch
     }
 }
 
 const PROJECTS = [
+    {
+        title: 'Itch.io',
+        description: 'En este link de itch.io puedes ver mis proyectos en su versión más reciente.',
+        link: 'https://leonavarro.itch.io',
+        image: ScreenShotItch,
+        tags: [TAGS.ITCH]
+    },
     {
         title: 'Rick And Morty App',
         description: 'App en React Native y Expo con expo-router, que utiliza NativeWind para estilos y muestra personajes de Rick and Morty mediante su API.',
