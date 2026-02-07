@@ -6,6 +6,7 @@ import ScreenShotPageIA from '../assets/projects/ia.webp';
 import ScreenShotPageVR from '../assets/projects/vr.webp';
 import ScreenShotPageMario from '../assets/projects/mario.webp';
 import ScreenShotItch from '../assets/projects/itch.webp';
+import ScreenShotLanding from '../assets/projects/landing.webp';
 import Tailwind from './icons/Tailwind.astro';
 import React from './icons/React.astro';
 import Social from './Social.astro';
@@ -21,6 +22,7 @@ import Csharp from './icons/Csharp.astro';
 import JavaScript from './icons/JavaScript.astro';
 import Phaser from './icons/Phaser.astro';
 import Itch from './icons/Itch.astro';
+import Next from './icons/NextJS.astro';
 
 const TAGS = {
     TAILWIND: {
@@ -70,6 +72,10 @@ const TAGS = {
     ITCH:{
         name: 'Itch',
         icon: Itch
+    },
+    NEXT:{
+        name: 'NextJS',
+        icon: Next
     }
 }
 
@@ -103,6 +109,14 @@ const PROJECTS = [
         artstation: 'https://www.artstation.com/artwork/V20g8R',
         image: ScreenShotPageMyWork,
         tags: [TAGS.BLENDER]
+    },
+    {
+        title: 'Landing Page',
+        description: 'Este proyecto es una landing premium para el mando Elite 2 con un hero de scrollytelling que anima una secuencia sincronizada al scroll.',
+        link: 'https://scrolling-landing-page.vercel.app',
+        github: 'https://github.com/LeoNavarro1197/scrolling-landing-page',
+        image: ScreenShotLanding,
+        tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRPT, TAGS.TAILWIND]
     },
     {
         title: 'Rick And Morty App',
