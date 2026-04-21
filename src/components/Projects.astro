@@ -7,6 +7,7 @@ import ScreenShotPageVR from '../assets/projects/vr.webp';
 import ScreenShotPageMario from '../assets/projects/mario.webp';
 import ScreenShotItch from '../assets/projects/itch.webp';
 import ScreenShotLanding from '../assets/projects/landing.webp';
+import ScreenShotZenith from '../assets/projects/zenith.webp';
 import Tailwind from './icons/Tailwind.astro';
 import React from './icons/React.astro';
 import Social from './Social.astro';
@@ -23,6 +24,8 @@ import JavaScript from './icons/JavaScript.astro';
 import Phaser from './icons/Phaser.astro';
 import Itch from './icons/Itch.astro';
 import Next from './icons/NextJS.astro';
+import PlayStore from './icons/PlayStore.astro';
+import Adobe from './icons/Adobe.astro';
 
 const TAGS = {
     TAILWIND: {
@@ -76,10 +79,25 @@ const TAGS = {
     NEXT:{
         name: 'NextJS',
         icon: Next
+    },
+    PLAYSTORE:{
+        name: 'PlayStore',
+        icon: PlayStore
+    },
+    ADOBE:{
+        name: 'Adobe',
+        icon: Adobe
     }
 }
 
 const PROJECTS = [
+    {
+        title: 'Zenith Rise',
+        description: 'Esté videojuego lo realicé utilizando el motor Unity, Aseprite, illustrator y Photoshop.',
+        link: 'https://play.google.com/store/apps/details?id=com.DefaultCompany.JumpJumpRanking',
+        image: ScreenShotZenith,
+        tags: [TAGS.PLAYSTORE, TAGS.UNITY, TAGS.ADOBE]
+    },
     {
         title: 'Itch.io',
         description: 'En este link de itch.io puedes ver mis proyectos en su versión más reciente.',
